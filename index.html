@@ -1,13 +1,1061 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Amabile</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Amabile Piano School</title>
+
+<style>
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family:
+    "Hiragino Kaku Gothic ProN",
+    "Yu Gothic",
+    Meiryo,
+    sans-serif;
+  color: #333;
+  line-height: 1.8;
+  background: #fff;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+
+/* =========================
+   ヘッダー
+========================= */
+
+header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: rgba(255,255,255,0.96);
+  border-bottom: 1px solid #eee;
+}
+
+.header-inner {
+  max-width: 1100px;
+  margin: auto;
+  height: 78px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 0 24px;
+}
+
+.logo {
+  font-family: Georgia, serif;
+  font-size: 27px;
+  letter-spacing: 2px;
+  color: #8a5a6b;
+}
+
+nav {
+  display: flex;
+  gap: 28px;
+  font-size: 14px;
+}
+
+nav a {
+  transition: 0.3s;
+}
+
+nav a:hover {
+  color: #b8778e;
+}
+
+
+/* =========================
+   メインビジュアル
+========================= */
+
+.hero {
+  min-height: 620px;
+
+  background:
+    linear-gradient(
+      rgba(0,0,0,0.25),
+      rgba(0,0,0,0.25)
+    ),
+    url("https://images.unsplash.com/photo-1520523839897-bd0b52f945a0?auto=format&fit=crop&w=1800&q=85");
+
+  background-size: cover;
+  background-position: center;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  text-align: center;
+  color: white;
+
+  padding: 40px;
+}
+
+.hero-inner {
+  max-width: 850px;
+}
+
+.hero-sub {
+  font-size: 16px;
+  letter-spacing: 4px;
+}
+
+.hero h1 {
+  font-family: Georgia, serif;
+  font-size: 50px;
+  font-weight: normal;
+  line-height: 1.4;
+  margin: 15px 0;
+}
+
+.hero p {
+  font-size: 18px;
+}
+
+.button {
+  display: inline-block;
+  margin-top: 30px;
+
+  padding: 15px 36px;
+
+  background: #a66b80;
+  color: white;
+
+  border-radius: 3px;
+
+  transition: 0.3s;
+}
+
+.button:hover {
+  background: #875567;
+}
+
+
+/* =========================
+   共通セクション
+========================= */
+
+section {
+  padding: 90px 24px;
+}
+
+.container {
+  max-width: 1050px;
+  margin: auto;
+}
+
+.section-title {
+  text-align: center;
+  margin-bottom: 55px;
+}
+
+.section-title small {
+  display: block;
+  color: #a66b80;
+  letter-spacing: 3px;
+}
+
+.section-title h2 {
+  font-family: Georgia, serif;
+  font-size: 36px;
+  font-weight: normal;
+  margin: 5px 0;
+}
+
+.lead {
+  max-width: 760px;
+  margin: auto;
+  text-align: center;
+}
+
+
+/* =========================
+   教室紹介
+========================= */
+
+.about {
+  background: #faf7f8;
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 55px;
+  align-items: center;
+}
+
+.about-text h3 {
+  font-size: 28px;
+  font-weight: normal;
+  color: #744b59;
+}
+
+.about-image img {
+  width: 100%;
+  height: 420px;
+  object-fit: cover;
+}
+
+
+/* =========================
+   特徴
+========================= */
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+.feature {
+  padding: 36px 28px;
+  border: 1px solid #e4d9dd;
+  background: white;
+  text-align: center;
+}
+
+.feature-number {
+  font-family: Georgia, serif;
+  font-size: 40px;
+  color: #c89daf;
+}
+
+.feature h3 {
+  font-size: 20px;
+}
+
+
+/* =========================
+   コース
+========================= */
+
+.lesson {
+  background: #faf7f8;
+}
+
+.lesson-grid {
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  gap: 28px;
+}
+
+.lesson-card {
+  background: white;
+  box-shadow: 0 4px 18px rgba(0,0,0,0.06);
+}
+
+.lesson-card img {
+  width: 100%;
+  height: 230px;
+  object-fit: cover;
+}
+
+.lesson-content {
+  padding: 30px;
+}
+
+.lesson-content h3 {
+  color: #7d5362;
+}
+
+
+/* =========================
+   講師
+========================= */
+
+.teacher-grid {
+  display: grid;
+  grid-template-columns: 360px 1fr;
+  gap: 55px;
+  align-items: center;
+}
+
+.teacher-grid img {
+  width: 100%;
+  height: 460px;
+  object-fit: cover;
+}
+
+.teacher-name {
+  font-family: Georgia, serif;
+  font-size: 30px;
+  color: #764c5b;
+}
+
+
+/* =========================
+   料金
+========================= */
+
+.price {
+  background: #faf7f8;
+}
+
+.price-box {
+  max-width: 760px;
+  margin: auto;
+  background: white;
+  border: 1px solid #eadde1;
+  padding: 45px;
+}
+
+.price-row {
+  display: flex;
+  justify-content: space-between;
+
+  padding: 17px 0;
+
+  border-bottom: 1px solid #eee;
+}
+
+.price-value {
+  font-weight: bold;
+  color: #9a6075;
+}
+
+
+/* =========================
+   FAQ
+========================= */
+
+.faq {
+  max-width: 800px;
+  margin: auto;
+}
+
+.faq-item {
+  border-bottom: 1px solid #ddd;
+  padding: 25px 0;
+}
+
+.faq-q {
+  font-weight: bold;
+  color: #86576a;
+}
+
+
+/* =========================
+   CTA
+========================= */
+
+.cta {
+  background: #85596a;
+  color: white;
+  text-align: center;
+}
+
+.cta h2 {
+  font-family: Georgia, serif;
+  font-size: 38px;
+  font-weight: normal;
+}
+
+.cta .button {
+  background: white;
+  color: #85596a;
+}
+
+.cta .button:hover {
+  background: #f3e9ed;
+}
+
+
+/* =========================
+   フッター
+========================= */
+
+footer {
+  background: #2e292b;
+  color: #ddd;
+
+  text-align: center;
+
+  padding: 55px 20px;
+}
+
+.footer-logo {
+  color: white;
+  font-family: Georgia, serif;
+  font-size: 25px;
+  letter-spacing: 2px;
+}
+
+
+/* =========================
+   スマホ
+========================= */
+
+@media (max-width: 768px) {
+
+  nav {
+    display: none;
+  }
+
+  .hero {
+    min-height: 520px;
+  }
+
+  .hero h1 {
+    font-size: 35px;
+  }
+
+  section {
+    padding: 65px 20px;
+  }
+
+  .section-title h2 {
+    font-size: 29px;
+  }
+
+  .about-grid,
+  .teacher-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .features-grid,
+  .lesson-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .about-image img,
+  .teacher-grid img {
+    height: auto;
+  }
+
+}
+
+</style>
 </head>
 
+
 <body>
-  <h1>Amabile Official Website</h1>
-  <p>ホームページへようこそ。</p>
+
+
+<!-- ヘッダー -->
+
+<header>
+
+  <div class="header-inner">
+
+    <div class="logo">
+      Amabile
+    </div>
+
+    <nav>
+
+      <a href="#about">
+        教室について
+      </a>
+
+      <a href="#feature">
+        特徴
+      </a>
+
+      <a href="#lesson">
+        レッスン
+      </a>
+
+      <a href="#teacher">
+        講師紹介
+      </a>
+
+      <a href="#price">
+        料金
+      </a>
+
+      <a href="#contact">
+        お問い合わせ
+      </a>
+
+    </nav>
+
+  </div>
+
+</header>
+
+
+
+<!-- メインビジュアル -->
+
+<section class="hero">
+
+  <div class="hero-inner">
+
+    <div class="hero-sub">
+      AMABILE PIANO SCHOOL
+    </div>
+
+    <h1>
+      音楽をもっと身近に。<br>
+      あなたらしい音を育てるピアノ教室
+    </h1>
+
+    <p>
+      初心者から経験者、音大受験まで。<br>
+      一人ひとりの目標に合わせた個人レッスン。
+    </p>
+
+    <a
+      class="button"
+      href="#contact"
+    >
+      体験レッスンを申し込む
+    </a>
+
+  </div>
+
+</section>
+
+
+
+<!-- 教室について -->
+
+<section
+  id="about"
+  class="about"
+>
+
+  <div class="container">
+
+    <div class="section-title">
+
+      <small>
+        ABOUT
+      </small>
+
+      <h2>
+        教室について
+      </h2>
+
+    </div>
+
+
+    <div class="about-grid">
+
+      <div class="about-image">
+
+        <img
+          src="https://images.unsplash.com/photo-1552422535-c45813c61732?auto=format&fit=crop&w=1000&q=80"
+          alt="ピアノ"
+        >
+
+      </div>
+
+
+      <div class="about-text">
+
+        <h3>
+          音楽を楽しむ気持ちを
+          大切にしています
+        </h3>
+
+        <p>
+          Amabile Piano Schoolでは、
+          小さなお子さまから大人の方まで、
+          それぞれの目的や経験に合わせた
+          ピアノレッスンを行っています。
+        </p>
+
+        <p>
+          初めてピアノに触れる方、
+          趣味として楽しみたい方、
+          コンクールや音楽大学を目指す方まで、
+          一人ひとりに合わせて丁寧に指導します。
+        </p>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<!-- 特徴 -->
+
+<section id="feature">
+
+  <div class="container">
+
+    <div class="section-title">
+
+      <small>
+        FEATURES
+      </small>
+
+      <h2>
+        Amabileの特徴
+      </h2>
+
+    </div>
+
+
+    <div class="features-grid">
+
+
+      <div class="feature">
+
+        <div class="feature-number">
+          01
+        </div>
+
+        <h3>
+          完全個人レッスン
+        </h3>
+
+        <p>
+          一人ひとりのレベル、
+          目的、ペースに合わせて
+          レッスンを進めます。
+        </p>
+
+      </div>
+
+
+      <div class="feature">
+
+        <div class="feature-number">
+          02
+        </div>
+
+        <h3>
+          初心者歓迎
+        </h3>
+
+        <p>
+          楽譜が読めない方でも
+          基礎から丁寧に
+          サポートします。
+        </p>
+
+      </div>
+
+
+      <div class="feature">
+
+        <div class="feature-number">
+          03
+        </div>
+
+        <h3>
+          本格的な指導
+        </h3>
+
+        <p>
+          音大受験やコンクールを
+          目指す方にも対応します。
+        </p>
+
+      </div>
+
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<!-- レッスン -->
+
+<section
+  id="lesson"
+  class="lesson"
+>
+
+  <div class="container">
+
+
+    <div class="section-title">
+
+      <small>
+        LESSON
+      </small>
+
+      <h2>
+        レッスンコース
+      </h2>
+
+    </div>
+
+
+    <div class="lesson-grid">
+
+
+      <div class="lesson-card">
+
+        <img
+          src="https://images.unsplash.com/photo-1520523839897-bd0b52f945a0?auto=format&fit=crop&w=900&q=80"
+          alt=""
+        >
+
+        <div class="lesson-content">
+
+          <h3>
+            子どものピアノ
+          </h3>
+
+          <p>
+            音楽を楽しみながら、
+            リズム・読譜・演奏の
+            基礎を学びます。
+          </p>
+
+        </div>
+
+      </div>
+
+
+
+      <div class="lesson-card">
+
+        <img
+          src="https://images.unsplash.com/photo-1552422535-c45813c61732?auto=format&fit=crop&w=900&q=80"
+          alt=""
+        >
+
+        <div class="lesson-content">
+
+          <h3>
+            大人のピアノ
+          </h3>
+
+          <p>
+            初心者から経験者まで、
+            好きな曲を中心に
+            楽しく学べます。
+          </p>
+
+        </div>
+
+      </div>
+
+
+
+      <div class="lesson-card">
+
+        <img
+          src="https://images.unsplash.com/photo-1514119412350-e174d90d280e?auto=format&fit=crop&w=900&q=80"
+          alt=""
+        >
+
+        <div class="lesson-content">
+
+          <h3>
+            音大受験・専門コース
+          </h3>
+
+          <p>
+            音楽高校・音楽大学の
+            受験対策にも対応します。
+          </p>
+
+        </div>
+
+      </div>
+
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<!-- 講師 -->
+
+<section id="teacher">
+
+  <div class="container">
+
+    <div class="section-title">
+
+      <small>
+        TEACHER
+      </small>
+
+      <h2>
+        講師紹介
+      </h2>
+
+    </div>
+
+
+    <div class="teacher-grid">
+
+
+      <div>
+
+        <img
+          src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=900&q=80"
+          alt="講師"
+        >
+
+      </div>
+
+
+      <div>
+
+        <div class="teacher-name">
+          ○○ ○○
+        </div>
+
+        <p>
+          ○○音楽大学ピアノ科卒業。
+        </p>
+
+        <p>
+          在学中より演奏活動を行い、
+          卒業後は演奏活動と並行して
+          後進の指導にあたっています。
+        </p>
+
+        <p>
+          小さなお子さまから
+          大人の初心者、
+          音楽大学受験生まで、
+          幅広い年代を指導しています。
+        </p>
+
+      </div>
+
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<!-- 料金 -->
+
+<section
+  id="price"
+  class="price"
+>
+
+  <div class="container">
+
+
+    <div class="section-title">
+
+      <small>
+        PRICE
+      </small>
+
+      <h2>
+        レッスン料金
+      </h2>
+
+    </div>
+
+
+    <div class="price-box">
+
+
+      <div class="price-row">
+
+        <span>
+          30分レッスン
+        </span>
+
+        <span class="price-value">
+          月額 8,000円〜
+        </span>
+
+      </div>
+
+
+      <div class="price-row">
+
+        <span>
+          45分レッスン
+        </span>
+
+        <span class="price-value">
+          月額 11,000円〜
+        </span>
+
+      </div>
+
+
+      <div class="price-row">
+
+        <span>
+          60分レッスン
+        </span>
+
+        <span class="price-value">
+          月額 14,000円〜
+        </span>
+
+      </div>
+
+
+      <p>
+        ※料金はサンプルです。
+        実際の料金に変更してください。
+      </p>
+
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<!-- FAQ -->
+
+<section>
+
+  <div class="container">
+
+    <div class="section-title">
+
+      <small>
+        FAQ
+      </small>
+
+      <h2>
+        よくある質問
+      </h2>
+
+    </div>
+
+
+    <div class="faq">
+
+
+      <div class="faq-item">
+
+        <div class="faq-q">
+          Q. ピアノ初心者でも大丈夫ですか？
+        </div>
+
+        <p>
+          はい。
+          楽譜の読み方や姿勢、
+          指の使い方から丁寧に指導します。
+        </p>
+
+      </div>
+
+
+      <div class="faq-item">
+
+        <div class="faq-q">
+          Q. 大人から始めても大丈夫ですか？
+        </div>
+
+        <p>
+          もちろんです。
+          大人になってから初めて
+          ピアノを始められる方も多くいらっしゃいます。
+        </p>
+
+      </div>
+
+
+      <div class="faq-item">
+
+        <div class="faq-q">
+          Q. 体験レッスンはありますか？
+        </div>
+
+        <p>
+          はい。
+          ご入会前に体験レッスンを
+          お受けいただけます。
+        </p>
+
+      </div>
+
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<!-- CTA -->
+
+<section
+  id="contact"
+  class="cta"
+>
+
+  <div class="container">
+
+    <h2>
+      まずは体験レッスンへ
+    </h2>
+
+    <p>
+      教室の雰囲気やレッスン内容を
+      実際に体験してみませんか？
+    </p>
+
+    <a
+      class="button"
+      href="mailto:example@example.com"
+    >
+      お問い合わせ
+    </a>
+
+  </div>
+
+</section>
+
+
+
+<!-- フッター -->
+
+<footer>
+
+  <div class="footer-logo">
+    Amabile Piano School
+  </div>
+
+  <p>
+    ○○県○○市○○町 1-2-3
+  </p>
+
+  <p>
+    TEL 000-0000-0000
+  </p>
+
+  <p>
+    © 2026 Amabile Piano School
+  </p>
+
+</footer>
+
+
 </body>
 </html>
