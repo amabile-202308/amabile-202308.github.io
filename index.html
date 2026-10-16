@@ -119,10 +119,14 @@ nav a:hover {
 
 .hero h1 {
   font-family: Georgia, serif;
-  font-size: 50px;
+  font-size: clamp(32px, 4vw, 50px);
   font-weight: normal;
   line-height: 1.4;
   margin: 15px 0;
+}
+
+.hero-title-line {
+  white-space: nowrap;
 }
 
 .hero p {
@@ -416,6 +420,10 @@ footer {
     font-size: 35px;
   }
 
+ .hero-title-line {
+   white-space: normal;
+ }
+
   section {
     padding: 65px 20px;
   }
@@ -502,10 +510,12 @@ footer {
       AMABILE PIANO STUDIO
     </div>
 
-    <h1>
-      音楽をもっと身近に。<br>
-      あなたらしい音を育てるピアノスタジオ
-    </h1>
+	<h1>
+	  音楽をもっと身近に。<br>
+	  <span class="hero-title-line">
+	    あなたらしい音を育てるピアノスタジオ
+	  </span>
+	</h1>
 
     <p>
       小学生以上を対象に、音大受験に備えた指導も可能。<br>
